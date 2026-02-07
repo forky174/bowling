@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 def read_data(file_id):
-    dir = 'bowling/'
+    dir = ''
 
     df_raw = pd.read_csv(dir + 'bowling-raw-' + file_id + '.tsv', sep='\t')
     df_raw = df_raw.rename(columns={'# Time': 'time'})
@@ -20,5 +20,6 @@ def read_data(file_id):
     frame_num = frame_num.astype(np.int16())
     x_raw = x_raw.astype(np.float32())
     y_raw = y_raw.astype(np.float32())
+
 
     return time, frame_num, x_raw, y_raw
